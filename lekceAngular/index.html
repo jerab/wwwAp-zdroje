@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Google Phone Gallery</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="https://code.angularjs.org/1.5.0-rc.0/angular.js"></script>
+  <script src="js/controllers.js"></script>
+</head>
+<body>
+<div ng-app="testModul">
+  <ul ng-controller="naKlik">
+    <li ng-repeat="ob in obce">
+      <span>{{ob.nazev}}</span>
+      <p>{{ob.kraj}}</p>
+    </li>
+  </ul>
+</div>
+
+<div id="test">
+  <ul ng-controller="naKlik">
+    <li ng-repeat="ob in obce | orderBy: 'id'">
+      <span>{{ob.nazev}}</span>
+      <p>{{ob.kraj}}</p>
+    </li>
+  </ul>
+</div>
+<script>angular.bootstrap(document.getElementById('test'), ['testModul'])</script>
+</body>
+</html>
